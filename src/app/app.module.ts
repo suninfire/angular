@@ -10,6 +10,7 @@ import {PostsComponent} from './components/posts/posts.component';
 import {MainLayoutComponent} from "./layouts/mainLayout/mainLayout.component";
 import {HeaderComponent} from './components/header/header.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import {PostComponent} from "./components/post/post.component";
 
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
     MainLayoutComponent,
     HeaderComponent,
     UserDetailsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
