@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import {IUser} from "../../interfaces";
-import {UserService} from "../../services";
+import {IUser} from '../../interfaces';
+import {UserService} from '../../services';
 
 @Component({
   selector: 'app-users',
@@ -9,21 +9,17 @@ import {UserService} from "../../services";
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-users:IUser[];
+  users: IUser[];
+  selectedUser: IUser;
 
   constructor(private userService: UserService) {
   }
-
-  // SAME AS ^^^^^^^^
-  // export class UsersComponent implements OnInit {
-  // http: HttpClient;
-  //
-  // constructor(http:HttpClient) {
-  //   this.http = http
-  // }
 
   ngOnInit(): void {
     this.userService.getAll().subscribe(value => this.users = value)
   }
 
+  getUser(user: IUser) {
+    this.selectedUser = user
+  }
 }
